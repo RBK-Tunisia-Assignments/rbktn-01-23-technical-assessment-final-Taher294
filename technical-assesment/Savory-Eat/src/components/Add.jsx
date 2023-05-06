@@ -1,7 +1,22 @@
-import React from "react";
-import "../App.css";
+import React, { useState } from "react";
+import { password } from "../../../server/database-mysql/config";
+import axios from 'axios';
 
 const Add = () => {
+  const[username,setusername]=useState("")
+    const[email,setemail]=useState("")
+    cnost[password,setpassword]=useState("")
+    const navigate=useNavigate()
+    
+    
+    const handleSubmit=()=>{
+        const newclient={
+            username:username,
+            email:email,
+            password:password,
+        }   
+        axios.post("http://localhost:3001/client",newclient).then(()=>navigate("/"))
+    }
   return (
     <div className="add-recipe-form ">
       <div className="form-group">

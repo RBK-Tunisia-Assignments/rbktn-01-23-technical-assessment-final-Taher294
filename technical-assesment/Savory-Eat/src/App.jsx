@@ -3,6 +3,13 @@ import React ,{useState}from "react";
 import "./App.css";
 import Home from "./components/Home.jsx";
 import AllRecepies from "./components/AllRecipies.jsx"
+import Onerecepie from "./components/OneRecipie";
+
+fetch('https://localhost:3001/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
 function App() {
 const [view,setView]=useState('Home')
   let changeView = (view) => {
